@@ -8,9 +8,8 @@ public class InputManager : MonoBehaviour
 {
     public bool JumpDown {get; private set;}
     public bool JumpUp {get; private set;}
-    public bool AttackDown {get; private set;}
-    public bool InteractDown {get; private set;}
 
+    public bool InteractDown {get; private set;}
     public Vector3 WalkInput {get; private set;}
 
     private PlayerInputActions PlayerInputActions {get; set;}
@@ -29,9 +28,6 @@ public class InputManager : MonoBehaviour
         var jumpButton = (ButtonControl)PlayerInputActions.FindAction("Jump").controls[0];
         JumpDown = jumpButton.wasPressedThisFrame;
         JumpUp = jumpButton.wasReleasedThisFrame;
-        
-        var attackButton = (ButtonControl)PlayerInputActions.FindAction("Attack").controls[0];
-        AttackDown = attackButton.wasPressedThisFrame;
 
         var interactButton = (ButtonControl)PlayerInputActions.FindAction("Interact").controls[0];
         InteractDown = interactButton.wasPressedThisFrame;

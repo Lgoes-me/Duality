@@ -23,6 +23,7 @@ namespace TarodevController {
         public Vector3 RawMovement { get; private set; }
         public bool Grounded => _colDown;
 
+        private float _lastInput;
         private Vector3 _lastPosition;
         private float _currentHorizontalSpeed, _currentVerticalSpeed;
 
@@ -32,6 +33,11 @@ namespace TarodevController {
         {
             PlayerInputActions = new PlayerInputActions();
             PlayerInputActions.Enable();
+        }
+
+        private void OnEnable() 
+        {
+            Animator.SetFloat("Horizontal", _lastInput);
         }
         
         private void OnDestroy() 
@@ -171,7 +177,8 @@ namespace TarodevController {
 
         private void CalculateWalk() {
             if (Input.X != 0) {
-                
+                _lastInput = Input.X;
+
                 Animator.SetFloat("Horizontal", Input.X);
                 
                 // Set horizontal move speed
@@ -185,16 +192,12 @@ namespace TarodevController {
                 _currentHorizontalSpeed += apexBonus * Time.deltaTime;
             }
             else {                
-                Animator.SetFloat("Horizontal", _currentHorizontalSpeed);
-                
                 // No input. Let's slow the character down
                 _currentHorizontalSpeed = Mathf.MoveTowards(_currentHorizontalSpeed, 0, _deAcceleration * Time.deltaTime);
             }
 
             if (_currentHorizontalSpeed > 0 && _colRight || _currentHorizontalSpeed < 0 && _colLeft) {
-                // Don't walk through walls                
-                Animator.SetFloat("Horizontal", _currentHorizontalSpeed);
-
+                // Don't walk through walls       
                 _currentHorizontalSpeed = 0;
             }
         }

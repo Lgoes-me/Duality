@@ -58,7 +58,7 @@ Material:
     m_Floats:
     - Vector1_8CB61F27: 0.8
     - _EnableExternalAlpha: 0
-    - _GradientAdjustment: 0.8
+    - _GradientAdjustment: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}

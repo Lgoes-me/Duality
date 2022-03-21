@@ -12,7 +12,7 @@ public class Interactable : MonoBehaviour
     public virtual void DoInteraction()
     {
         GameManager.ChangePlayer();
-        sprite.color = Color.blue;
+        sprite.color = Color.white;
     }
 
     public virtual void Select()
@@ -22,7 +22,7 @@ public class Interactable : MonoBehaviour
 
     public virtual void Unselect()
     {
-        sprite.color = Color.red;
+        sprite.color = Color.white;
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
