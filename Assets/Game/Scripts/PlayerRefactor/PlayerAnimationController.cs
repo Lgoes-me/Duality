@@ -41,22 +41,14 @@ public class PlayerAnimationController : MonoBehaviour
         Animator.SetBool("IsJumping", false);
         Walk(direction);
     }
-
-    public void Attack(Vector3 direction)
-    {
-        Animator.SetTrigger("Attack");
-        Walk(direction);
-    }
-
-    public void StartPush(Vector3 direction)
+    
+    public void StartPush()
     {
         Animator.SetBool("IsPushing", true);
-        Walk(direction);
     }
 
-    public void StopPush(Vector3 direction)
+    public void StopPush()
     {
         Animator.SetBool("IsPushing", false);
-        Walk(direction);
     }
 }

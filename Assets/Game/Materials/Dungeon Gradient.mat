@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dungeon
+  m_Name: Dungeon Gradient
   m_Shader: {fileID: -6465566751694194690, guid: 6c8596c1e3667794e886656023095718, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -59,7 +59,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GradientTex:
-        m_Texture: {fileID: 2800000, guid: 7ddecb9a9d4e4e8418f4eda1232e6eba, type: 3}
+        m_Texture: {fileID: 2800000, guid: 165b6bc5f7a585d4a9de141c6a69b483, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _METALNESS_MAP:

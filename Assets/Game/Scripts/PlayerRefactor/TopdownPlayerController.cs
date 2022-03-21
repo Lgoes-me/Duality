@@ -13,16 +13,12 @@ public class TopdownPlayerController : MonoBehaviour
     [field: SerializeField]
     private PlayerAnimationController PlayerAnimationController {get; set;}
 
+    [field: SerializeField]
+    private PlayerPusher PlayerPusher {get; set;}
+
     void Start()
     {
         PlayerAnimationController.Face(Vector3.down);
-    }
-
-    private void Update()
-    {
-        var direction = InputManager.WalkInput;
-
-        Attack(direction);
     }
 
     private void FixedUpdate()
@@ -32,43 +28,20 @@ public class TopdownPlayerController : MonoBehaviour
         Walk(direction);
     }
 
-    private void Attack(Vector3 direction)
-    {
-        if(InputManager.AttackDown)
-        {
-            PlayerAnimationController.Attack(direction);
-        }
-    }
-
     private void Walk(Vector3 direction)
     {
         var input = direction.sqrMagnitude;
 
+        if(PlayerPusher.IsPushing(direction))
+            PlayerAnimationController.StartPush();
+        else
+            PlayerAnimationController.StopPush();
+        
         PlayerAnimationController.Walk(direction);
 
         if(input > 0)
         {
             transform.position += direction * Speed * Time.deltaTime;
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D other) 
-    {
-        var direction = InputManager.WalkInput;
-
-        if(other.gameObject.CompareTag("Pushable"))
-        {
-            PlayerAnimationController.StartPush(direction);
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D other) 
-    {
-        var direction = InputManager.WalkInput;
-
-        if(other.gameObject.CompareTag("Pushable"))
-        {
-            PlayerAnimationController.StopPush(direction);
         }
     }
 }

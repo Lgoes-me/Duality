@@ -20,6 +20,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
@@ -49,7 +50,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -63,6 +64,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -5607,10 +5609,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -8, y: -2}
+      - - {x: 2, y: -2}
+        - {x: -8, y: -2}
         - {x: -8, y: 8}
         - {x: 2, y: 8}
-        - {x: 2, y: -2}
       tessellationDetail: 0
       bones: []
       spriteID: 9b5eddc7b73f60b45b056eeafdf44599
@@ -10292,8 +10294,8 @@ TextureImporter:
       PixelPackTOPDOWN8BIT_368: 466502474
       PixelPackTOPDOWN8BIT_288: -1873533141
       PixelPackTOPDOWN8BIT_382: -631205885
-      PixelPackTOPDOWN8BIT_141: -684197572
       PixelPackTOPDOWN8BIT_403: -1618511256
+      PixelPackTOPDOWN8BIT_141: -684197572
       PixelPackTOPDOWN8BIT_274: 1476438929
       PixelPackTOPDOWN8BIT_78: 2026861420
       PixelPackTOPDOWN8BIT_93: -1554678862
@@ -10640,7 +10642,6 @@ TextureImporter:
       PixelPackTOPDOWN8BIT_407: 1886231107
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
