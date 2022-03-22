@@ -9,6 +9,7 @@ public class TilemapRendererControlBehaviour : PlayableBehaviour
 {
     protected static readonly int shPropIntensity = Shader.PropertyToID("_GradientAdjustment");
     private MaterialPropertyBlock materialPropertyBlock;
+
     public MaterialPropertyBlock MaterialPropertyBlock 
     { 
         get
@@ -19,7 +20,7 @@ public class TilemapRendererControlBehaviour : PlayableBehaviour
             return materialPropertyBlock;
         } 
     }
-
+    
     public AnimationCurve Curve;
     public float WaitTime;
 

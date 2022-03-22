@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    public GameManager GameManager;
+    protected static readonly int shGradRange = Shader.PropertyToID("_GradientRange");
 
     public SpriteRenderer sprite;
+
     private PlayerInteractor PlayerInteractor {get; set;}
 
     public virtual void DoInteraction()
     {
-        GameManager.ChangePlayer();
-        sprite.color = Color.white;
+        GameManager.Instance.ChangePlayer();
     }
 
     public virtual void Select()
     {
-        sprite.color = Color.green;
+        sprite.material.SetFloat(shGradRange, 0);
     }
 
     public virtual void Unselect()
     {
-        sprite.color = Color.white;
+        sprite.material.SetFloat(shGradRange, 1);
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
